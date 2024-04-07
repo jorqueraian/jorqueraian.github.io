@@ -238,6 +238,20 @@ div.subTitleInner div.right {
 	overflow: visible;	/* fix for IE italics bug */
 }
 
+#mainOuter2 div.left,
+#mainOuter2 div.right,
+#mainOuter2 div.content,
+div.subBarInner div.content,
+div.subBarInner div.right,
+div.subTitleInner div.content,
+div.subTitleInner div.right {
+	/* For Sub elements of #mainOuter2 AND div.subBarInner */
+	float: left;
+	position: relative;
+	z-index: 10;
+	overflow: visible;	/* fix for IE italics bug */
+}
+
 /* --------------------- The Sub Bar Piece -------------------- */
 
 div.subBarOuter,
@@ -287,6 +301,37 @@ div.subTitleInner div.content {
 }
 
 #mainOuter .left {
+	width: 16em;
+	margin: 0 1px 0 -16em;	/* Column position */
+}
+
+
+/* --------------------- The Main Bar Piece 2 -------------------- */
+
+#mainOuter2 {
+	z-index: 1;
+	border-left: 0em #E6EEF0 solid;
+	border-right: 8px #0B70CE solid;
+}
+
+#mainInner {
+	border-left: 2px solid #FFF;
+	background: #F0F3F2;
+}
+
+#mainOuter2 .content {
+	margin: 0 -1px;	/* Ensure floating */
+	width: 100%;
+}
+
+#mainOuter2 .right {
+	/* Not used for now */
+	float: right; 			/* Possiblity for NN4 layout */
+	width: 15em;
+	margin: 0 -15em 0 1px;	/* Column position */
+}
+
+#mainOuter2 .left {
 	width: 16em;
 	margin: 0 1px 0 -16em;	/* Column position */
 }
@@ -415,6 +460,12 @@ div.subTitleInner {
 ul.dotted,
 li.select {
 	list-style-type: square;
+	color: #40A3FE;
+	margin-left: 52px;
+}
+
+ol.numbers,
+li.select {
 	color: #40A3FE;
 	margin-left: 52px;
 }
