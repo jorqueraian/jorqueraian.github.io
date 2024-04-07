@@ -76,10 +76,26 @@ img.product,
 	padding: 0;
 }
 
-.product {
+.product2 {
 	font-weight: bold;
 	color: #0B70CE ! important;
 }
+
+img.product2, 
+.product2 img {
+	border: 1px solid #225F82;
+	margin: 12px 8px 4px 8px;
+}
+
+.content .product2 {
+	text-align: left;
+}
+
+.product2 {
+	font-weight: bold;
+	color: #0B70CE ! important;
+}
+
 
 div.wide3 {
 	width: 33%;
