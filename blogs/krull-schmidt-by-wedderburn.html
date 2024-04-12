@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<title> -=[ Ian Jorquera ]=- </title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="StyleSheet" href="../style.css" type="text/css" />
+<style type="text/css">
+</style>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+	MathJax = {
+	  tex: {
+		inlineMath: [['$', '$']]
+	  }
+	};
+  </script>
+</head>
+<body>
+<div id="bodyWrap">
+	<div class="pageWrapper">
+		<div id="header">
+			<div id="logo">
+				<h1>Logo &trade;</h1>
+			</div>
+			<div id="heading">
+				<div class="head"></div>
+				<div class="top">
+					<a href="index.html">Home</a>
+					<a href="research.html">Research</a>
+					<a href="research.html">Publications</a>
+					<a href="https://github.com/jorqueraian">Software</a>
+					<a href="teaching.html">Teaching</a>
+					<a href="https://www.math.colostate.edu/~king/GameofSloanes.html">Game Of Sloanes</a> <!--To add more: increase width on line 182 of style.css-->
+				</div>
+				<div class="sub">
+					<a href="Kayaking.html">Kayaking</a>
+					<a href="comingsoon.html">Skiing</a>
+					<a href="other.html">Other</a>
+					<a href="comingsoon.html">CV</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pageWrapper" id="main">
+		<div class="gap">
+		</div>
+
+		<div id="mainOuter2">
+			<div id="mainInner">
+				<div class="content">
+					<div class="titleMain">
+						<a href="index.html">Home</a> &gt;
+						<a href="#">Cool Things</a> &gt;
+						<a href="../more_cool_things.html">Part 2</a> &gt;
+						<a href="../hidden_blog.html">Blog</a> &gt;
+                        <a href="#">1</a> &gt;
+					</div>
+					<h1><span> </span>Krull-Schmidt by Wedderburn</h1>
+					<div class="product">
+						<a href="#">
+							<img alt="me ... coming soon" src="products/prod1.jpg" />
+						</a>
+					</div>
+					
+                    <p>Krull-Schmidt is a rather fascinating theorem for me, with an interesting history shrouded in politics 
+                       This article will give me a chance to not only work through the proof for my self but a place where i can share my thoughts, intuitions, and give some motivation behind some of the idk</p>
+                    <h3>The History</h3>
+                    <p>ill skip this for now but ill comment that the Krull-Schmidt theorem was first proven by Wedderburn, who doesnt not get their names on the theorem.</p>
+
+					<h3>Why Study Representations?</h3>
+					<h3>Why Decompose Representations?</h3>
+					<h3>A Recursive Algorithm to Decompose Representations</h3>
+					<p>talk about idempotent and stuff</p>
+					<h3>When are decompositions Unique?</h3>
+					<p>bla some context here. Goal: hint for the automorphisms. This is telling us that we need to find the particular automorphism that will exchange factors of $\mathcal{H}$ with factors of $\mathcal{K}$.</p>
+					<p>Let $M$ be a module with $\mathcal{H}$ and $\mathcal{K}$ be fully refined $\oplus$-decompositions of $M$
+					And let $\mathcal{E}(\mathcal{H})$ and $\mathcal{E}(\mathcal{K})$ be their corresponding idempotents.</p>
+					<p>Give context with corner algebra and what not.</p>
+					<p>Then Notice because the collections of idempotents sum to the identity we can write 
+					the identity in a rather odd way but with the corner algebra in mind. That is 
+					that $1=\sum_{K\in\mathcal{K}} e_K\sum_{H\in\mathcal{H}} f_H\sum_{K'\in\mathcal{K}} e_{K'}=\sum_{K,K'\in\mathcal{K}, H\in\mathcal{H}} e_Kf_He_{K'}$. Where each term $e_Kf_He_{K'}$ can be interpreted as a map from $K'$ to $K$ This is an example of what is referred to as a check spelling Peirce decomposition. Some proof of this theorem use a different but very similar decomposition of the identity, and I personally think those proof miss out on the generalizations of this theorem in different worlds that have this Peirce Decompostion, or something similar.
+					This will allow us to argue about the existence of the automorphism we are after by finding isomorphism between a factor $K$ and $H$.</p>
+					<p>To find the automorphisms, we need to determine what these terms in the sum look like. Notice first that when $K\neq K'$ we have that $e_Kf_He_{K'}e_Kf_He_{K'}=0$, meaning $e_Kf_He_{K'}$ is a nilpotent map which an be interpreted as a map from $K'$ to $K$.</p>
+					<p>Next lets consider the terms where $K=K'$, that is were are looking at maps from $K$ to $K$. Notice first that in these cases we are looking at homomorphisms of the form $e_K\text{End}(_AM)e_K\cong\text{End}(e_KM)\cong\text{End}(K)$ so we need to understand what the endomorphism rings of these fully refined factors look like.</p>
+					<p>To learn about these endomorphism rings we can look to Fitting's Lemma</p>
+					<p>So Fittings lemma is telling us about 2 possibilities about the homomorphism in our sum of the form $e_Kf_He_{K}$, either they're an automorphism on $K$ or they're a nilpotent map on $K$. But because we are looking for isomorphism we need to rule out the possibility that they're all nilpotents.</p>
+					<p>give reason for why there must be at least one isomoprhism. In fact for each $K$ there needs to be some $H$ where $e_Kf_He_{K}$ is an isomoprhism. This is where we get our automorphism because if $\gamma=e_Kf_He_{K}=e_Kf_Hf_He_{K}$ is an isomorphism then the homomorphism $f_He_{K}$ must also be an isomorphism from $K$ to $H$ with inverse $\gamma^{-1}e_Kf_H$. justify right inverse </p>
+					<p>This is where we get our automorphism, it's precisely the sum of these maps $f_He_{K}$ from $K$ to $H$ for each $K$ we wish to exchange. Its important to note that this choice of $H$ for each $K$ may not be unique.</p>
+					<h4>The Theorem</h4>
+                    Bla Bla Bla accending chain and decending chain conditions. Let $\mathcal{H}$ and $\mathcal{K}$ be fully refined $\oplus$-decompositions of $M$
+					Then the set of all fully refined submodules forms a matroid (or really a $\Delta$-matroid).
+					That is for any
+                    </p>
+				</div>
+				<div class="clear mozclear"></div>
+			</div>
+		</div>
+		<div class="hide" id="nsFooterClear"><!-- for NS4's sake --></div>
+		<div id="footer" class="gap">
+			Design &copy; 2005, <a href="http://virtualfunction.net/" title="Virtual Function: specialists in Web Design, Ruby on Rails programming, Database development, and bespoke solutions">Virtual Function Web Development.</a> Modified by Ian Jorquera
+		</div>
+	</div>
+</div>
+</body>
+</html>
