@@ -70,17 +70,32 @@
                     <p>ill skip this for now but ill comment that the Krull-Schmidt theorem was first proven by Wedderburn, who doesnt not get their names on the theorem.</p>
 
 					<h3>Why Study Representations?</h3>
+					<p>connect to modules. idk give top of triangle of representation (what James calls Cayley's Resonance)</p>
 					<h3>Why Decompose Representations?</h3>
-					<h3>A Recursive Algorithm to Decompose Representations</h3>
-					<p>talk about idempotent and stuff</p>
+					<p>What is a decompose?</p>
+					
+					<h3>How to Decompose: A Recursive Algorithm to Decompose Representations</h3>
+					<p>Lets first look at an example of a decomposition to see what we should being looking for. 
+						Consider the $2$-dimensional vector space $V=K^2$ over your favorite field $K$. This can be 
+						thought of as an action by scalar multiplication on $V$, where $K\times V\rightarrow V$. Its easy to see that
+					    $V$ decomposed into two subspaces on its components: $$K^2=\left\{\begin{bmatrix}*\\0\end{bmatrix}\right\}\oplus \left\{\begin{bmatrix}0\\ *\end{bmatrix}\right\}\cong K\oplus K$$</p>
+					<p>This is a rather boring example but it can still help highlight what we are after, in the sense that each of these 
+						factors can be thought of as coming from a projection. This idea can be highlighted in following diagram:$$j$$</p>
+					<p>This is telling us that in order to find decompositions we need to find idempotents. idk what to put here but we get a correspondence between decompositions of modules and a collection of idempotent maps on $V$</p>
+					<p>Theorem: There is a 1-to-1 correspondence between collections of idempotents $\mathcal{E}\subseteq\text{End}(V)$ and direct decompositions of $V$</p>
 					<h3>When are decompositions Unique?</h3>
+					<p>Bla Bla Bla accending chain and decending chain conditions. Let $\mathcal{H}$ and $\mathcal{K}$ be fully refined $\oplus$-decompositions of $M$
+						Then the set of all fully refined submodules forms a matroid (or really a $\Delta$-matroid?).
+						That is for any</p>
 					<p>bla some context here. Goal: hint for the automorphisms. This is telling us that we need to find the particular automorphism that will exchange factors of $\mathcal{H}$ with factors of $\mathcal{K}$.</p>
 					<p>Let $M$ be a module with $\mathcal{H}$ and $\mathcal{K}$ be fully refined $\oplus$-decompositions of $M$
 					And let $\mathcal{E}(\mathcal{H})$ and $\mathcal{E}(\mathcal{K})$ be their corresponding idempotents.</p>
 					<p>Give context with corner algebra and what not.</p>
 					<p>Then Notice because the collections of idempotents sum to the identity we can write 
 					the identity in a rather odd way but with the corner algebra in mind. That is 
-					that $1=\sum_{K\in\mathcal{K}} e_K\sum_{H\in\mathcal{H}} f_H\sum_{K'\in\mathcal{K}} e_{K'}=\sum_{K,K'\in\mathcal{K}, H\in\mathcal{H}} e_Kf_He_{K'}$. Where each term $e_Kf_He_{K'}$ can be interpreted as a map from $K'$ to $K$ This is an example of what is referred to as a check spelling Peirce decomposition. Some proof of this theorem use a different but very similar decomposition of the identity, and I personally think those proof miss out on the generalizations of this theorem in different worlds that have this Peirce Decompostion, or something similar.
+					that $1=\sum_{K\in\mathcal{K}} e_K\sum_{H\in\mathcal{H}} f_H\sum_{K'\in\mathcal{K}} e_{K'}=\sum_{K,K'\in\mathcal{K}, H\in\mathcal{H}} e_Kf_He_{K'}$. 
+					Where each term $e_Kf_He_{K'}$ can be interpreted as a map from $K'$ to $K$ This is an example of what is referred to as a check spelling Peirce decomposition. 
+					Some proof of this theorem use a different but very similar decomposition of the identity, and I personally think those proof miss out on the generalizations of this theorem in different worlds that have this Peirce Decompostion, or something similar.
 					This will allow us to argue about the existence of the automorphism we are after by finding isomorphism between a factor $K$ and $H$.</p>
 					<p>To find the automorphisms, we need to determine what these terms in the sum look like. Notice first that when $K\neq K'$ we have that $e_Kf_He_{K'}e_Kf_He_{K'}=0$, meaning $e_Kf_He_{K'}$ is a nilpotent map which an be interpreted as a map from $K'$ to $K$.</p>
 					<p>Next lets consider the terms where $K=K'$, that is were are looking at maps from $K$ to $K$. Notice first that in these cases we are looking at homomorphisms of the form $e_K\text{End}(_AM)e_K\cong\text{End}(e_KM)\cong\text{End}(K)$ so we need to understand what the endomorphism rings of these fully refined factors look like.</p>
@@ -89,10 +104,6 @@
 					<p>give reason for why there must be at least one isomoprhism. In fact for each $K$ there needs to be some $H$ where $e_Kf_He_{K}$ is an isomoprhism. This is where we get our automorphism because if $\gamma=e_Kf_He_{K}=e_Kf_Hf_He_{K}$ is an isomorphism then the homomorphism $f_He_{K}$ must also be an isomorphism from $K$ to $H$ with inverse $\gamma^{-1}e_Kf_H$. justify right inverse </p>
 					<p>This is where we get our automorphism, it's precisely the sum of these maps $f_He_{K}$ from $K$ to $H$ for each $K$ we wish to exchange. Its important to note that this choice of $H$ for each $K$ may not be unique.</p>
 					<h4>The Theorem</h4>
-                    Bla Bla Bla accending chain and decending chain conditions. Let $\mathcal{H}$ and $\mathcal{K}$ be fully refined $\oplus$-decompositions of $M$
-					Then the set of all fully refined submodules forms a matroid (or really a $\Delta$-matroid).
-					That is for any
-                    </p>
 				</div>
 				<div class="clear mozclear"></div>
 			</div>
