@@ -25,57 +25,7 @@ layout: default
 <div id="bodyWrap">
 	{% include top.html %}
 	<div class="pageWrapper" id="main">
-		<div class="subTitleOuter">
-			<div class="subTitleInner">
-				<div class="right">
-					<h2>Featured Thing</h2>
-				</div>
-				<div class="content">
-					<h2>Cool New Things</h2>
-				</div>
-				<div class="clear mozclear"></div>
-
-			</div>
-		</div>
-		<div class="gap">
-		</div>
-		<div class="subBarOuter">
-			<div class="subBarInner">
-				<div class="right">
-					<a href="pages/Ian's Madras Dal.html" class="product">
-						<p>Ian's Madras Dal Recipe</p>
-						<img alt="No Image found :(" src="products/1.jpg" />
-						<span> </span>
-					</a>
-				</div>
-				<div class="content">
-					<div class="wide3">
-						<a href="https://www.math.colostate.edu/~king/GameofSloanes.html" class="product">
-							<p>Game Of Sloanes</p>
-							<div style="overflow:hidden; margin-top: -10px;">
-								<img alt="No Image found :(" src="images/sloanes.PNG" width="100" height="100" style="margin:-5% 0px -5% 0px;" />
-							</div>
-						</a>
-					</div>
-					<div class="wide3">
-						<a href="Kayaking.html" class="product">
-							<p>The Kayaking Page</p>
-							<div style="overflow:hidden; margin-top: -10px;">
-								<img alt="No Image found :(" src="images/kayak_gore.jpg" width="100" height="100" style="margin:-5% 0px -5% 0px;" />
-							</div>
-						</a>
-					</div>
-					<div class="wide3">
-						<a href="pages/Vegan Gyoza.html" class="product">
-							<p>Vegan Gyoza Recipe</p>
-							<img alt="No Image found :(" src="products/1.jpg" />
-							<span>Cool yea?</span>
-						</a>
-					</div>
-				</div>
-				<div class="clear mozclear"></div>
-			</div>
-		</div>
+		{% include things.html %}
 		<div class="gap">
 		</div>
 
