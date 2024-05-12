@@ -1,103 +1,45 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html>
-<head>
-<title> -=[ Ian Jorquera ]=- </title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="StyleSheet" href="../style.css" type="text/css" />
-<style type="text/css">
-</style>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-<script>
-	MathJax = {
-	  tex: {
-		inlineMath: [['$', '$']]
-	  }
-	};
-  </script>
-</head>
-<body>
-<div id="bodyWrap">
-	<div class="pageWrapper">
-		<div id="header">
-			<div id="logo">
-				<h1>Logo &trade;</h1>
-			</div>
-			<div id="heading">
-				<div class="head"></div>
-				<div class="top">
-					<a href="../index.html">Home</a>
-					<a href="../research.html">Research</a>
-					<a href="../research.html">Publications</a>
-					<a href="https://github.com/jorqueraian">Software</a>
-					<a href="../teaching.html">Teaching</a>
-					<a href="https://www.math.colostate.edu/~king/GameofSloanes.html">Game Of Sloanes</a> <!--To add more: increase width on line 182 of style.css-->
-				</div>
-				<div class="sub">
-					<a href="../Kayaking.html">Kayaking</a>
-					<a href="../comingsoon.html">Skiing</a>
-					<a href="../other.html">Other</a>
-					<a href="../comingsoon.html">CV</a>
-				</div>
-			</div>
-		</div>
+---
+layout: page
+permalink: /cool-things/part-3/thoughts/1
+---
+<div class="content">
+	<div class="titleMain">
+		<a href="/">Home</a> &gt;
+		<a href="#">Cool Things</a> &gt;
+		<a href="/cool-things/part-3">Part 3</a> &gt;
+		<a href="/cool-things/part-3/thoughts">Blog</a> &gt;
+		<a href="#">1</a> &gt;
 	</div>
-	<div class="pageWrapper" id="main">
-		<div class="gap">
-		</div>
-
-		<div id="mainOuter2">
-			<div id="mainInner">
-				<div class="content">
-					<div class="titleMain">
-						<a href="../index.html">Home</a> &gt;
-						<a href="#">Cool Things</a> &gt;
-						<a href="../more_cool_things.html">Part 2</a> &gt;
-						<a href="../hidden_blog.html">Blog</a> &gt;
-                        <a href="#">2</a> &gt;
-					</div>
-					<h1><span> </span>When its really just a Matrix!</h1>
-					<div class="product">
-						<a href="#">
-							<img alt="me ... coming soon" src="products/prod1.jpg" />
-						</a>
-					</div>
-					
-                    <p>Pierce decompositions provide a rich collection of tools to the 
-                        decomposition tool box. Often shrouded by notation and big words
-                        they answer a rather simple and well motivated 
-                        question: "Is this thing really just a matrix if I squint hard 
-                        enough?" and often the answer is yes!</p>
-                        <p>Lets look at an example of what we are after: Matrices. 
-                            Let $M_2(\mathbb{R})$ be the $2$-by-$2$ matrices over $\mathbb{R}$ and notice that we can decompose any matrix into into components, meaning
-                            $$M_2(\mathbb{R})=\left\{\begin{bmatrix}a & b\\ c & d\end{bmatrix} \Big| a,b,c,d\in\mathbb{R} \right\}=\left\{\begin{bmatrix}a & 0\\ 0 & 0\end{bmatrix} \right\}\oplus\left\{\begin{bmatrix}0 & b\\ 0 & 0\end{bmatrix} \right\}\oplus \left\{\begin{bmatrix}0 & 0\\ c & 0\end{bmatrix} \right\}\oplus \left\{\begin{bmatrix}0 & 0\\ 0 & d\end{bmatrix} \right\}$$
-                        So our motivating question is this: When is an arbitrary Algebra decomposable into what looks like a behaves like the components of a matrix? And when is multiplication really just matrix multiplication?</p>
-                    <h3>The History</h3>
-                    <p>ill skip this for now but ill comment that the Krull-Schmidt theorem was first proven by Wedderburn, who doesnt not get their names on the theorem.</p>
-
-					<h3>Why Study Representations?</h3>
-					<p>connect to modules. idk give top of triangle of representation (what James calls Cayley's Resonance)</p>
-					<h3>Why Decompose Representations?</h3>
-					<p>What is a decompose?</p>
-					<h3>How to Decompose: A Recursive Algorithm to Decompose Representations</h3>
-					<p>Lets first look at an example of a decomposition to see what we should being looking for. 
-						Consider the $2$-dimensional vector space $V=K^2$ over your favorite field $K$. This can be 
-						thought of as an action by scalar multiplication on $V$, where $K\times V\rightarrow V$. Its easy to see that
-					    $V$ decomposed into two subspaces on its components: $$K^2=\left\{\begin{bmatrix}*\\0\end{bmatrix}\right\}\oplus \left\{\begin{bmatrix}0\\ *\end{bmatrix}\right\}\cong K\oplus K$$</p>
-					<p>This is a rather boring example but it can still help highlight what we are after, in the sense that each of these 
-						factors can be thought of as coming from a projection. This idea can be highlighted in following diagram:$$j$$</p>
-					<p>This is telling us that in order to find decompositions we need to find idempotents. idk what to put here but we get a correspondence between decompositions of modules and a collection of idempotent maps on $V$</p>
-					<p>Theorem: There is a 1-to-1 correspondence between collections of idempotents $\mathcal{E}\subseteq\text{End}(V)$ and direct decompositions of $V$</p>
-				</div>
-				<div class="clear mozclear"></div>
-			</div>
-		</div>
-		<div class="hide" id="nsFooterClear"><!-- for NS4's sake --></div>
-		<div id="footer" class="gap">
-			Design &copy; 2005, <a href="http://virtualfunction.net/" title="Virtual Function: specialists in Web Design, Ruby on Rails programming, Database development, and bespoke solutions">Virtual Function Web Development.</a> Modified by Ian Jorquera
-		</div>
+	<h1><span> </span>When its really just a Matrix!</h1>
+	<div class="product">
+		<a href="#">
+			<img alt="me ... coming soon" src="products/prod1.jpg" />
+		</a>
 	</div>
+	
+	<p>Pierce decompositions provide a rich collection of tools to the 
+		decomposition tool box. Often shrouded by notation and big words
+		they answer a rather simple and well motivated 
+		question: "Is this thing really just a matrix if I squint hard 
+		enough?" and often the answer is yes!</p>
+		<p>Lets look at an example of what we are after: Matrices. 
+			Let $M_2(\mathbb{R})$ be the $2$-by-$2$ matrices over $\mathbb{R}$ and notice that we can decompose any matrix into into components, meaning
+			$$M_2(\mathbb{R})=\left\{\begin{bmatrix}a & b\\ c & d\end{bmatrix} \Big| a,b,c,d\in\mathbb{R} \right\}=\left\{\begin{bmatrix}a & 0\\ 0 & 0\end{bmatrix} \right\}\oplus\left\{\begin{bmatrix}0 & b\\ 0 & 0\end{bmatrix} \right\}\oplus \left\{\begin{bmatrix}0 & 0\\ c & 0\end{bmatrix} \right\}\oplus \left\{\begin{bmatrix}0 & 0\\ 0 & d\end{bmatrix} \right\}$$
+		So our motivating question is this: When is an arbitrary Algebra decomposable into what looks like a behaves like the components of a matrix? And when is multiplication really just matrix multiplication?</p>
+	<h3>The History</h3>
+	<p>ill skip this for now but ill comment that the Krull-Schmidt theorem was first proven by Wedderburn, who doesnt not get their names on the theorem.</p>
+
+	<h3>Why Study Representations?</h3>
+	<p>connect to modules. idk give top of triangle of representation (what James calls Cayley's Resonance)</p>
+	<h3>Why Decompose Representations?</h3>
+	<p>What is a decompose?</p>
+	<h3>How to Decompose: A Recursive Algorithm to Decompose Representations</h3>
+	<p>Lets first look at an example of a decomposition to see what we should being looking for. 
+		Consider the $2$-dimensional vector space $V=K^2$ over your favorite field $K$. This can be 
+		thought of as an action by scalar multiplication on $V$, where $K\times V\rightarrow V$. Its easy to see that
+		$V$ decomposed into two subspaces on its components: $$K^2=\left\{\begin{bmatrix}*\\0\end{bmatrix}\right\}\oplus \left\{\begin{bmatrix}0\\ *\end{bmatrix}\right\}\cong K\oplus K$$</p>
+	<p>This is a rather boring example but it can still help highlight what we are after, in the sense that each of these 
+		factors can be thought of as coming from a projection. This idea can be highlighted in following diagram:$$j$$</p>
+	<p>This is telling us that in order to find decompositions we need to find idempotents. idk what to put here but we get a correspondence between decompositions of modules and a collection of idempotent maps on $V$</p>
+	<p>Theorem: There is a 1-to-1 correspondence between collections of idempotents $\mathcal{E}\subseteq\text{End}(V)$ and direct decompositions of $V$</p>
 </div>
-</body>
-</html>
