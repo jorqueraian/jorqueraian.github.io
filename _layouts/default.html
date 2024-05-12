@@ -25,7 +25,9 @@ layout: default
 <div id="bodyWrap">
 	{% include top.html %}
 	<div class="pageWrapper" id="main">
-		{% include things.html %}
+		{% if page.things %}
+			{% include things.html %}
+		{% endif %}
 		<div class="gap">
 		</div>
 
