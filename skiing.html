@@ -2,6 +2,23 @@
 layout: page
 permalink: /skiing
 ---
+<style>
+	#test {
+		position: absolute;
+		margin-left: 1200px;
+		margin-top: 200px;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script>
+	$(window).scroll(function(){
+  $("#test").css({"margin-top": ($(window).scrollTop())+200 + "px", "margin-left":(100*Math.sin($(window).scrollTop()/300))+1200 + "px"});
+});
+</script>
+<div id="test" id="testwrapper">
+	<img width="20" alt="me ... coming soon" src="images/ski-animation.jpg" />
+</div>
 <div class="content">
 	<div class="titleMain">
 		<a href="/">Home</a> &gt;
