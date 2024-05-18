@@ -6,14 +6,14 @@ permalink: /skiing
 	#test {
 		position: absolute;
 		margin-left: 1200px;
-		margin-top: 200px;
+		margin-top: 20px;
 	}
 </style>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 <script>
 	$(window).scroll(function(){
-  $("#test").css({"margin-top": ($(window).scrollTop())+200 + "px", "margin-left":(100*Math.sin($(window).scrollTop()/300))+1200 + "px"});
+  $("#test").css({"margin-top": ($(window).scrollTop())+20 + "px", "margin-left":(-80*Math.cos($(window).scrollTop()/300))+1120 + "px"});
 });
 </script>
 <div id="test" id="testwrapper">
