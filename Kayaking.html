@@ -14,7 +14,7 @@ permalink: /kayaking
     crossorigin="anonymous"></script>
 <script>
 	$(window).scroll(function(){
-  $("#kayaker").css({"margin-top": 1.25*$(window).scrollTop() + "px"});
+  $("#kayaker").css({"margin-top": Math.min(1.25*$(window).scrollTop(),3500) + "px"});
   $("#kayaker").css({"transform": "rotate(" + $(window).scrollTop() + "deg)"});
 });
 </script>
