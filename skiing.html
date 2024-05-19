@@ -3,7 +3,7 @@ layout: page
 permalink: /skiing
 ---
 <style>
-	#test {
+	#skiier {
 		position: absolute;
 		margin-left: 1150px;
 		margin-top: 20px;
@@ -13,19 +13,35 @@ permalink: /skiing
 		margin-left: 1220px;
 		margin-top: 600px;
 	}
+	#tree2 {
+		position: absolute;
+		margin-left: 1220px;
+		margin-top: 1200px;
+	}
+	#tree3 {
+		position: absolute;
+		margin-left: 1320px;
+		margin-top: 1700px;
+	}
 </style>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 <script>
 	$(window).scroll(function(){
-  $("#test").css({"margin-top": (1.2*$(window).scrollTop())+20 + "px", "margin-left":(-80*Math.cos($(window).scrollTop()/200))+1230 + "px"});
+  $("#skiier").css({"margin-top": (1.2*$(window).scrollTop())+20 + "px", "margin-left":(-70*Math.cos($(window).scrollTop()/150))+1240 + "px"});
 });
 </script>
-<div id="test" id="testwrapper">
+<div id="skiier" id="testwrapper">
 	<img width="30" alt="me ... coming soon" src="images/ski-animation.jpg" />
 </div>
 <div id="tree">
 	<img width="30" alt="me ... coming soon" src="images/tree.png" />
+</div>
+<div id="tree2">
+	<img width="30" alt="me ... coming soon" src="images/tree2.png" />
+</div>
+<div id="tree3">
+	<img width="30" alt="me ... coming soon" src="images/tree2.png" />
 </div>
 <div class="content">
 	<div class="titleMain">
