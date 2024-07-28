@@ -36,11 +36,11 @@ a:hover {
 
 /** Uncomment below for liquid width (expands and contracts with brwoser window width 
 */
-.pageWrapper {
+/*.pageWrapper {
 	margin: 0 auto;
 	width: 1130px;
 	min-width: 620px;
-}
+}*/
 
 
 /* extension to page wrapper */
