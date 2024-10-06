@@ -1,0 +1,100 @@
+---
+layout: page
+permalink: /cool-things/part-3/thoughts/4
+---
+<div class="content">
+	<div class="titleMain">
+		<a href="/">Home</a> &gt;
+		<a href="#">Cool Things</a> &gt;
+		<a href="/cool-things/part-3">Part 3</a> &gt;
+		<a href="/cool-things/part-3/thoughts">Blog</a> &gt;
+		<a href="#">4</a> &gt;
+	</div>
+	<h1><span> </span>Natural Transformations: Why are Natural Transformations Natural?</h1>
+
+	<p>I am a member of Colorado State's Applied category theorey seminar, and every semester we talk about the basic definitions in category theory.
+        I have been trying to become a better mathematician, trying to better understand not the "what" but the "why". In this particular seminar I have put a lot
+        of though into categories without objects. I wont talk about that too much here but it may affect my language. Anyway I have been thinking a lot about naturality,
+        as it is supposedly(maybe controversially) the primary objective of category theory.
+    </p>	
+    <p>My new found understanding of natural is partially motivated by algebra and some of the forgotten definitions there, such as inner homomorphisms. Never the less
+        I think the notion of inner gives a very informative foundation for what it means to be natural.
+    </p>
+	<h3>When is a Functor Inner? and what does that even mean?</h3>
+    <p>For some motivation lets look at the term "Inner"
+in the context of groups to get some motivation for why we might want a similar term in 
+the world of categories. 
+</p>
+
+<p>A group automorphism $\phi:G\ra G$ is called an inner automorphism if $\phi(g)=x^{-1}gx$ for 
+some fixed element $x\in G$. Inner automorphisms are the automorphisms that are really coming 
+from conjugation. A Group $G$ can act on its self by conjugation, and for each element the actions 
+by elements give us the inner automorphisms. These are very special automorphisms because they come 
+from with\textit{in} the group. In a sense the group already knew about these particular automorphisms.
+Furthermore conjugation in groups often looks like relabeling. For example consider the permutation $(1,5)(2,4,7,8)$
+conjugated by $(1,2,3,4)$, which would be
+$$(1,2,3,4)^{-1}\cdot(1,5)(2,4,7,8)\cdot(1,2,3,4)=(1,7,8,3)(2,5)=(2,5)(3,1,7,8)$$
+We can see that the structure hasn't changed drasticly but we have relabeled $1,2,3$ and $4$
+</p>
+
+<p>These are really the key idea behind the term "Inner", they refer to things that are coming from within 
+the algebraic object you are studying, and dont change the underlying structure is a significant way. 
+So how does this apply to functors? We lets look at some diagrams 
+and try to deduce what inner could possible mean.
+</p>
+
+<p>Consider a functor $F:C\ra C$ that maps a morphism $f$ to the morphism $Ff$
+
+$$\begin{tikzcd}
+        \cdot \arrow[r, "f"]
+        & \cdot \\
+        \cdot \arrow[r, "Ff"]
+        & \cdot
+    \end{tikzcd}$$
+</p>
+<p>
+To call this functor inner, it should have more or less the same idea as in the case of groups. Where the 
+morphism $f\in C$ is related to morphism $Ff\in C$ by some sort of "conjugation". And this conjugation should 
+more or less behave like a relabeling, and should affect the underlying structure in a significant way.
+But we have to be a bit more careful here as what ever we choose to do will depend on the sources and 
+targets of the morphism $f$, as they determine when we can and cant compose with $f$. So we may want to enforce that the functor
+maps morphism according to other morphisms already in the category $C$. Lets add in objects to help contextualize what is going one here.
+</p>
+<p>
+Our functor $F$ is a mapping a morphism $f:a\ra b$ to the morephims $Ff:Fa\ra Fb$ but now we will enforce that for the object $a$ and $b$, 
+the sources and targets of $f$, that there are morphisms $\phi_a:a\ra Fa$ and $\phi_b:b\ra Fb$ that create the following commuting square
+
+ 
+$$
+\begin{tikzcd}
+        a \arrow[r, "f"]\arrow[d, "\phi_a"]
+        & b \arrow[d, "\phi_b"]\\
+        Fa \arrow[r, "Ff"]
+        & Fb
+    \end{tikzcd}
+$$
+</p>
+<p>
+algebraically this is telling us about a commuting $\phi_b \circ f = Ff \circ \phi_a$. In a sense this is telling us 
+that the morphism $f$ is equivalent to the morphism $Ff$ up to some morphisms applied to the source and target, and 
+we can think about this as being similar to just relabeling the sources and targets. Infact if $\phi_a$ was invertible 
+this would give us an explicit conjugation $\phi_b \circ f \circ \phi_a^{-1}= Ff$.
+</p>
+<p>
+So now we can define what inner will mean in the context of categories. An \textbf{inner endofunctor} is a functor $F: C \ra C$ 
+along with a collection of maps $\{\phi_a | a\text{ an object of }C\}$ for each object(each source and target) 
+such that for every morphism $f:a\ra b$ we have
+$$\begin{tikzcd}
+        a \arrow[r, "f"]\arrow[d, "\phi_a"]
+        & b \arrow[d, "\phi_b"]\\
+        Fa \arrow[r, "Ff"]
+        & Fb
+    \end{tikzcd}$$
+</p>
+<p>
+Again this is really telling us that the morphisms $f$ and $Ff$ agree is some way internal to the category, by other morphism of the category.
+</p>
+<p>
+Maybe in a future post I will give an object free definition. But i may just skip to adjoint functor which is where i believe the object free definition are nicer.
+</p>
+</div>
