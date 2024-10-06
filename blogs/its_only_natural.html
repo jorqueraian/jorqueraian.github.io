@@ -26,7 +26,7 @@ in the context of groups to get some motivation for why we might want a similar 
 the world of categories. 
 </p>
 
-<p>A group automorphism $\phi:G\rightarrow G$ is called an inner automorphism if $\phi(g)=x^{-1}gx$ for 
+<p>A group automorphism $\varphi:G\rightarrow G$ is called an inner automorphism if $\varphi(g)=x^{-1}gx$ for 
 some fixed element $x\in G$. Inner automorphisms are the automorphisms that are really coming 
 from conjugation. A Group $G$ can act on its self by conjugation, and for each element the actions 
 by elements give us the inner automorphisms. These are very special automorphisms because they come 
@@ -61,21 +61,21 @@ maps morphism according to other morphisms already in the category $C$. Lets add
 </p>
 <p>
 Our functor $F$ is a mapping a morphism $f:a\rightarrow b$ to the morephims $Ff:Fa\rightarrow Fb$ but now we will enforce that for the object $a$ and $b$, 
-the sources and targets of $f$, that there are morphisms $\phi_a:a\rightarrow Fa$ and $\phi_b:b\rightarrow Fb$ that create the following commuting square
+the sources and targets of $f$, that there are morphisms $\varphi_a:a\rightarrow Fa$ and $\varphi_b:b\rightarrow Fb$ that create the following commuting square
 
 <div class="product">
         <img alt="inner endofunctor" src="../../../images/blog_images/blog4_2.png" style="width:20%;" />
 </div>
 </p>
 <p>
-algebraically this is telling us about a commuting $\phi_b \circ f = Ff \circ \phi_a$. In a sense this is telling us 
+algebraically this is telling us about a commuting $\varphi_b \circ f = Ff \circ \varphi_a$. In a sense this is telling us 
 that the morphism $f$ is equivalent to the morphism $Ff$ up to some morphisms applied to the source and target, and 
-we can think about this as being similar to just relabeling the sources and targets. Infact if $\phi_a$ was invertible 
-this would give us an explicit conjugation $\phi_b \circ f \circ \phi_a^{-1}= Ff$.
+we can think about this as being similar to just relabeling the sources and targets. Infact if $\varphi_a$ was invertible 
+this would give us an explicit conjugation $\varphi_b \circ f \circ \varphi_a^{-1}= Ff$.
 </p>
 <p>
 So now we can define what inner will mean in the context of categories. An \textbf{inner endofunctor} is a functor $F: C \rightarrow C$ 
-along with a collection of maps $\{\phi_a | a\text{ an object of }C\}$ for each object(each source and target) 
+along with a collection of maps $\{\varphi_a | a\text{ an object of }C\}$ for each object(each source and target) 
 such that for every morphism $f:a\rightarrow b$ we have
 <div class="product">
         <img alt="inner endofunctor" src="../../../images/blog_images/blog4_2.png" style="width:20%;" />
