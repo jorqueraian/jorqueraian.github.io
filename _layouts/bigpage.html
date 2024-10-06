@@ -1,0 +1,61 @@
+---
+layout: bigpage
+---
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<title> -=[ Ian Jorquera ]=- </title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="StyleSheet" href="/style.css" type="text/css" />
+<style type="text/css">
+</style>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+	MathJax = {
+	  tex: {
+		inlineMath: [['$', '$']]
+	  }
+	};
+</script>
+<style>
+	h1 {
+	font-size: 32px;
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+	font-size: 28px;
+	}
+
+	p {
+	font-size: 22px;
+	}
+</style>
+</head>
+<body>
+<div id="bodyWrap">
+	{% include top.html %}
+	<div class="pageWrapper" id="main">
+		<div class="gap">
+		</div>
+
+		<div id="mainOuter2">
+			<div id="mainInner">
+				{{ content }}
+				<div class="clear mozclear"></div>
+			</div>
+		</div>
+		<div class="hide" id="nsFooterClear"><!-- for NS4's sake --></div>
+		<div id="footer" class="gap">
+			Design &copy; 2005, <a href="http://virtualfunction.net/" title="Virtual Function: specialists in Web Design, Ruby on Rails programming, Database development, and bespoke solutions">Virtual Function Web Development.</a> Modified by Ian Jorquera
+		</div>
+	</div>
+</div>
+</body>
+</html>
