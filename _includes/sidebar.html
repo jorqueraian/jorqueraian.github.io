@@ -33,7 +33,7 @@
         <li><a href="/cool-things/part-3">More</a></li>
     </ul>
     <div>
-        <div class="button2"><a href="/coming-soon">What to do here</a></div>
+        <div class="button2" onclick="increaseFontSizeBy1px()"><a>What to do here</a></div>
     </div>
     <div class="titleSide">
         Language
@@ -48,3 +48,13 @@
         <input type="submit" value="Go!" />
     </div>
 </div>
+
+<script> 
+    function increaseFontSizeBy1px() {
+        var id = document.getElementById('p');
+        var style = window.getComputedStyle(id, null).getPropertyValue('font-size');
+        var currentSize = parseInt(style);
+        currentSize++;
+        document.getElementById('p').style.fontSize = currentSize.toString();
+    }
+</script>
