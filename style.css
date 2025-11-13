@@ -349,6 +349,7 @@ div.subTitleInner div.content {
 }
 
 #mainOuter2 .left {
+	float: left;
 	width: 16em;
 	margin: 0 1px 0 -16em;	/* Column position */
 }
