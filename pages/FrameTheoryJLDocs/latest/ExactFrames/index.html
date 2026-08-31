@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Frames Exactly · FrameTheory.jl</title><meta name="title" content="Frames Exactly · FrameTheory.jl"/><meta property="og:title" content="Frames Exactly · FrameTheory.jl"/><meta property="twitter:title" content="Frames Exactly · FrameTheory.jl"/><meta name="description" content="Documentation for FrameTheory.jl."/><meta property="og:description" content="Documentation for FrameTheory.jl."/><meta property="twitter:description" content="Documentation for FrameTheory.jl."/><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.63.2/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../search_index.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../"><img src="../assets/logo.svg" alt="FrameTheory.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit"><a href="../">FrameTheory.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../">Frame Theory</a></li><li class="is-active"><a class="tocitem" href>Frames Exactly</a><ul class="internal"><li><a class="tocitem" href="#Basic-Functionality"><span>Basic Functionality</span></a></li><li><a class="tocitem" href="#Constructions"><span>Constructions</span></a></li><li><a class="tocitem" href="#Binder-Finder"><span>Binder Finder</span></a></li><li><a class="tocitem" href="#The-Projective-Symmetry-Group-of-an-ETF"><span>The Projective Symmetry Group of an ETF</span></a></li></ul></li><li><a class="tocitem" href="../NumericalFrames/">Frames Numerically</a></li><li><a class="tocitem" href="../FiniteFieldFrames/">Frames over Finite Fields</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Frames Exactly</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Frames Exactly</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/jorqueraian/FrameTheory.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/jorqueraian/FrameTheory.jl/blob/master/docs/src/ExactFrames.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Frames-Exactly"><a class="docs-heading-anchor" href="#Frames-Exactly">Frames Exactly</a><a id="Frames-Exactly-1"></a><a class="docs-heading-anchor-permalink" href="#Frames-Exactly" title="Permalink"></a></h1><p>To compute frames exxactly we utilize <code>CalciumField</code> (documentation: <a href="https://docs.oscar-system.org/dev/Nemo/exact/#exact_real_complex">here</a>) from Oscar.jl to compute real and complex numbers exactly. Oscar loads a wrapper, for the c library <a href="https://fredrikj.net/calcium/">Calcium</a>, from <a href="https://nemocas.github.io/Nemo.jl/latest/exact/">Nemo.jl</a>. Exact number can be loaded as follows</p><pre><code class="language-julia hljs">julia&gt; using Oscar;
+
+julia&gt; C = CalciumField();
+
+julia&gt; C(2)
+2
+
+julia&gt; sqrt(C(2))
+1.41421 {a where a = 1.41421 [a^2-2=0]}
+
+julia exp(C(2)*C(pi)*C(1im)/C(3))
+-0.500000 + 0.866025*I {a where a = -0.500000 + 0.866025*I [a^2+a+1=0]}</code></pre><h2 id="Basic-Functionality"><a class="docs-heading-anchor" href="#Basic-Functionality">Basic Functionality</a><a id="Basic-Functionality-1"></a><a class="docs-heading-anchor-permalink" href="#Basic-Functionality" title="Permalink"></a></h2><article><details class="docstring"><summary id="FrameTheory.is_frame-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><a class="docstring-binding" href="#FrameTheory.is_frame-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><code>FrameTheory.is_frame</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">is_frame(gram) -&gt; Tuple{Bool,Int}</code></pre><p><strong>Arguments</strong></p><ul><li><code>gram::MatElem{CalciumFieldElem}</code>: A square matrix defined over Oscar&#39;s Calcium Field</li></ul><p><strong>Returns</strong></p><ul><li><code>frame_bool::Bool</code></li><li><code>d::Int</code></li></ul><p>Determines if the matrix <code>gram</code> is the Gram matrix for some frame. Returns a boolean <code>frame_bool</code> if the provided matrix is the Gram matrix of a frame for some <code>d</code>-dimensional space. If <code>frame_bool&#39; is &#39;false</code>  then <code>d</code> would be <code>nothing</code>.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; C = CalciumField();
+
+julia&gt; ζ = exp(C(2)*C(pi)*C(1im)/C(7));
+
+julia&gt; Phi = matrix(C, [1 ζ   ζ^2 ζ^3 ζ^4 ζ^5 ζ^6;
+                     1 ζ^2 ζ^4 ζ^6 ζ   ζ^3 ζ^5
+                     1 ζ^4 ζ   ζ^5 ζ^2 ζ^6 ζ^3]);
+
+julia&gt; gram = conjugate_transpose(Phi)*Phi;
+
+julia&gt; is_frame(gram)
+(true, 3)</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/jorqueraian/FrameTheory.jl/blob/33f07f498d555cd15cc3925c382f353bf466cbe8/src/ExactFrames/ExactFrames.jl#L8-L37">source</a></section></details></article><article><details class="docstring"><summary id="FrameTheory.is_equiangular-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><a class="docstring-binding" href="#FrameTheory.is_equiangular-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><code>FrameTheory.is_equiangular</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">is_equiangular(gram) -&gt; Tuple{Bool,CalciumFieldElem,CalciumFieldElem}</code></pre><p><strong>Arguments</strong></p><ul><li><code>gram::MatElem{CalciumFieldElem}</code>: A square matrix defined over CalciumField.</li></ul><p><strong>Returns</strong></p><ul><li><code>equiangular_bool::Bool</code></li><li><code>a::CalciumFieldElem</code></li><li><code>b::CalciumFieldElem</code></li></ul><p>Determines if the matrix <code>gram</code> is the Gram matrix for some collection of equiangular vectors. Returns a boolean <code>equiangular_bool</code> if the provided matrix is the Gram matrix of a collection of equiangular lines.  With <code>a</code> being the vectors common &#39;magnatudes&#39; and <code>b</code> the &#39;angle&#39;. If <code>equiangular_bool</code> is <code>False</code>, then <code>a</code> and <code>b</code> will be <code>nothing</code>.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; C = CalciumField();
+
+julia&gt; ζ = exp(C(2)*C(pi)*C(1im)/C(7));
+
+julia&gt; Phi = matrix(C, [1 ζ   ζ^2 ζ^3 ζ^4 ζ^5 ζ^6;
+                     1 ζ^2 ζ^4 ζ^6 ζ   ζ^3 ζ^5
+                     1 ζ^4 ζ   ζ^5 ζ^2 ζ^6 ζ^3]);
+
+julia&gt; gram = conjugate_transpose(Phi)*Phi;
+
+julia&gt; (equi_bool, a, b) = is_equiangular(gram)
+(true, 3, 2.00000 {a^2+b^2 where a = 1.32288 [Im(-0.500000 + 1.32288*I {c^4+c^2-c})], b = -0.500000 [Re(-0.500000 + 1.32288*I {c^4+c^2-c})], c = 0.900969 + 0.433884*I [c^6-c^5+c^4-c^3+c^2-c+1=0]})
+
+julia&gt; QQ(b)
+2</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/jorqueraian/FrameTheory.jl/blob/33f07f498d555cd15cc3925c382f353bf466cbe8/src/ExactFrames/ExactFrames.jl#L60-L93">source</a></section></details></article><article><details class="docstring"><summary id="FrameTheory.is_frame_tight-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><a class="docstring-binding" href="#FrameTheory.is_frame_tight-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><code>FrameTheory.is_frame_tight</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">is_frame_tight(gram) -&gt; Tuple{Bool,CalciumFieldElem}</code></pre><p><strong>Arguments</strong></p><ul><li><code>gram::MatElem{CalciumFieldElem}</code>: A square matrix which is the Gram matrix for a frame.</li></ul><p><strong>Returns</strong></p><ul><li><code>tight_bool::Bool</code></li><li><code>c::CalciumFieldElem</code></li></ul><p>Determines if the matrix <code>gram</code> is the Gram matrix for frame which is tight. If so returns <code>c</code> being the constant such that <code>gram^2=c*gram</code>. If <code>tight_bool</code> is <code>False</code>, then <code>c</code> will be <code>nothing</code>.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; C = CalciumField();
+
+julia&gt; ζ = exp(C(2)*C(pi)*C(1im)/C(7));
+
+julia&gt; Phi = matrix(C, [1 ζ   ζ^2 ζ^3 ζ^4 ζ^5 ζ^6;
+                     1 ζ^2 ζ^4 ζ^6 ζ   ζ^3 ζ^5
+                     1 ζ^4 ζ   ζ^5 ζ^2 ζ^6 ζ^3]);
+
+julia&gt; gram = conjugate_transpose(Phi)*Phi;
+
+julia&gt; is_frame_tight(gram)
+(true, 7)</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/jorqueraian/FrameTheory.jl/blob/33f07f498d555cd15cc3925c382f353bf466cbe8/src/ExactFrames/ExactFrames.jl#L119-L148">source</a></section></details></article><article><details class="docstring"><summary id="FrameTheory.is_ETF-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><a class="docstring-binding" href="#FrameTheory.is_ETF-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><code>FrameTheory.is_ETF</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">is_ETF(gram) -&gt; Tuple{Bool,CalciumFieldElem,CalciumFieldElem,CalciumFieldElem}</code></pre><p><strong>Arguments</strong></p><ul><li><code>gram::MatElem{CalciumFieldElem}</code>: A square matrix defined over the Reals or Complexes through CalciumField.</li></ul><p><strong>Returns</strong></p><ul><li><code>etf_bool::Bool</code></li><li><code>a::CalciumFieldElem</code></li><li><code>b::CalciumFieldElem</code></li><li><code>c::CalciumFieldElem</code></li><li><code>d::Int</code></li></ul><p>Determines if the matrix <code>gram</code> is the Gram matrix for some collection of vectors which form an equiangular tight frame (ETF). Calls and returns the same parameters from <code>is_frame</code>, <code>is_equiangular</code>, and <code>is_frame_tight</code>.</p><p><strong>Examples</strong></p><p>A <code>3x7</code> Paley <code>(3,2,7)</code>-ETF.</p><pre><code class="language-julia-repl hljs">julia&gt; C = CalciumField();
+
+julia&gt; ζ = exp(C(2)*C(pi)*C(1im)/C(7));
+
+julia&gt; Phi = matrix(C, [1 ζ   ζ^2 ζ^3 ζ^4 ζ^5 ζ^6;
+                     1 ζ^2 ζ^4 ζ^6 ζ   ζ^3 ζ^5
+                     1 ζ^4 ζ   ζ^5 ζ^2 ζ^6 ζ^3]);
+
+julia&gt; gram = conjugate_transpose(Phi)*Phi;
+
+julia&gt; is_ETF(gram)
+(true, 3, 2.00000 {a^2+b^2 where a = 1.32288 [Im(-0.500000 + 1.32288*I {c^4+c^2-c})], b = -0.500000 [Re(-0.500000 + 1.32288*I {c^4+c^2-c})], c = 0.900969 + 0.433884*I [c^6-c^5+c^4-c^3+c^2-c+1=0]}, 7, 3)</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/jorqueraian/FrameTheory.jl/blob/33f07f498d555cd15cc3925c382f353bf466cbe8/src/ExactFrames/ExactFrames.jl#L165-L197">source</a></section></details></article><h2 id="Constructions"><a class="docs-heading-anchor" href="#Constructions">Constructions</a><a id="Constructions-1"></a><a class="docs-heading-anchor-permalink" href="#Constructions" title="Permalink"></a></h2><article><details class="docstring"><summary id="FrameTheory.ExactCons.dx2d_etf_from_prime_power-Tuple{Int64}"><a class="docstring-binding" href="#FrameTheory.ExactCons.dx2d_etf_from_prime_power-Tuple{Int64}"><code>FrameTheory.ExactCons.dx2d_etf_from_prime_power</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">ExactCons.dx2d_etf_from_prime_power(prime_power) -&gt; MatElem{CalciumFieldElem}</code></pre><p><strong>Arguments</strong></p><ul><li><code>prime_power::Int</code>: an odd prime power</li></ul><p><strong>Returns</strong></p><ul><li><code>gram::MatElem{CalciumFieldElem}</code> the Gram matrix of a <code>(prime_power^2+1)/2</code> by <code>prime_power^2+1</code> ETF.</li></ul><p><strong>Examples</strong></p><p>A real Example</p><pre><code class="language-julia-repl hljs">julia&gt; gram = ExactCons.dx2d_etf_from_prime_power(5^2);
+
+julia&gt; is_ETF(gram)
+(true, 5,1,10,13)
+
+julia&gt; n = size(gram)[1]
+26
+
+julia&gt; all(isreal.(gram))
+true
+</code></pre><p>A complex example</p><pre><code class="language-julia-repl hljs">julia&gt; gram = ExactCons.dx2d_etf_from_prime_power(3);
+
+julia&gt; is_ETF(gram)
+(true, 1.73205 {a where a = 1.73205 [a^2-3=0]}, 1, 3.46410 {2*a where a = 1.73205 [a^2-3=0]}, 2)
+
+julia&gt; n = size(gram)[1]
+4
+
+julia&gt; all(isreal.(gram))
+false
+</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/jorqueraian/FrameTheory.jl/blob/33f07f498d555cd15cc3925c382f353bf466cbe8/src/ExactFrames/Constructions.jl#L14-L53">source</a></section></details></article><h2 id="Binder-Finder"><a class="docs-heading-anchor" href="#Binder-Finder">Binder Finder</a><a id="Binder-Finder-1"></a><a class="docs-heading-anchor-permalink" href="#Binder-Finder" title="Permalink"></a></h2><article><details class="docstring"><summary id="FrameTheory.binder_finder-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><a class="docstring-binding" href="#FrameTheory.binder_finder-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><code>FrameTheory.binder_finder</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">binder_finder(gram) -&gt; Matrix{Int}</code></pre><p><strong>Arguments</strong></p><ul><li><code>gram::MatElem{CalciumFieldElem}</code>: The Gram matrix of an ETF.</li></ul><p><strong>Returns</strong></p><ul><li><code>binder::Matrix{Int}</code>: The Binder of the provided frame, where each row denotes a simplex.</li></ul><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; C = CalciumField();
+
+julia&gt; ζ = exp(C(2)*C(pi)*C(1im)/C(3));
+
+julia&gt; hessa_sic = matrix(C, [
+          1    1       1    -1 -1  -1    0   0      0;
+          0    0       0     1  ζ  ζ^2  -1 -1*ζ   -1*ζ^2;
+         -1  -1*ζ^2  -1*ζ    0  0   0    1  ζ^2     ζ
+       ]);
+
+julia&gt; hessa_gram = conjugate_transpose(hessa_sic)*hessa_sic;
+
+julia&gt; is_ETF(hessa_gram)
+(true, 2, 1.00000 {a^2+b^2 where a = -0.866025 [Im(0.500000 - 0.866025*I {-c})], b = 0.500000 [Re(0.500000 - 0.866025*I {-c})], c = -0.500000 + 0.866025*I [c^2+c+1=0]}, 6, 3)
+
+julia&gt; binder_finder(hessa_gram)
+12×9 Matrix{Int64}:
+ 1  1  1  0  0  0  0  0  0
+ 1  0  0  1  0  0  1  0  0
+ 1  0  0  0  1  0  0  0  1
+ 1  0  0  0  0  1  0  1  0
+ 0  1  0  1  0  0  0  0  1
+ 0  1  0  0  1  0  0  1  0
+ 0  1  0  0  0  1  1  0  0
+ 0  0  1  1  0  0  0  1  0
+ 0  0  1  0  1  0  1  0  0
+ 0  0  1  0  0  1  0  0  1
+ 0  0  0  1  1  1  0  0  0
+ 0  0  0  0  0  0  1  1  1</code></pre><pre><code class="language-julia-repl hljs">julia&gt; C = CalciumField();
+
+julia&gt; ζ = exp(C(2)*C(pi)*C(1im)/C(3));
+
+julia&gt; hessa_sic = matrix(C, [
+          1    1       1     1  1   1    0   0      0;
+          0    0       0     1  ζ  ζ^2   1  1*ζ    1*ζ^2;
+          1   1*ζ^2   1*ζ    0  0   0    1  ζ^2     ζ
+       ]);
+
+julia&gt; hessa_gram = conjugate_transpose(hessa_sic)*hessa_sic;
+
+julia&gt; is_ETF(hessa_gram)
+(true, 2, 1.00000 {a^2+b^2 where a = -0.866025 [Im(0.500000 - 0.866025*I {-c})], b = 0.500000 [Re(0.500000 - 0.866025*I {-c})], c = -0.500000 + 0.866025*I [c^2+c+1=0]}, 6, 3)
+
+julia&gt; binder_finder(hessa_gram)
+3×9 Matrix{Int64}:
+ 1  1  1  0  0  0  0  0  0
+ 0  0  0  1  1  1  0  0  0
+ 0  0  0  0  0  0  1  1  1</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/jorqueraian/FrameTheory.jl/blob/33f07f498d555cd15cc3925c382f353bf466cbe8/src/ExactFrames/BinderFinder.jl#L4-L69">source</a></section></details></article><h2 id="The-Projective-Symmetry-Group-of-an-ETF"><a class="docs-heading-anchor" href="#The-Projective-Symmetry-Group-of-an-ETF">The Projective Symmetry Group of an ETF</a><a id="The-Projective-Symmetry-Group-of-an-ETF-1"></a><a class="docs-heading-anchor-permalink" href="#The-Projective-Symmetry-Group-of-an-ETF" title="Permalink"></a></h2><article><details class="docstring"><summary id="FrameTheory.projective_symmetry_group-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><a class="docstring-binding" href="#FrameTheory.projective_symmetry_group-Tuple{AbstractAlgebra.MatElem{Nemo.CalciumFieldElem}}"><code>FrameTheory.projective_symmetry_group</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">projective_symmetry_group(gram) -&gt; PermGroup</code></pre><p><strong>Arguments</strong></p><ul><li><code>gram::MatElem{CalciumFieldElem}</code>: A square matrix which is the Gram matrix of some ETF.</li><li><code>verbose::Bool</code>: (Default <code>false</code>).</li></ul><p><strong>Returns</strong></p><ul><li><code>G::PermGroup</code>: The group of permutations of the vector of the frame, that correspond to switching equivalences.</li></ul><p>BFS backen Adapted from the following Gap code by Joey Iverson: <a href="https://github.com/jwiverson/frame-symmetries/blob/main/symp.gap">https://github.com/jwiverson/frame-symmetries/blob/main/symp.gap</a> both backends implement the algorithm from section 4 of [7]. Over R or C this algorithm utilizes Proposition 3.3 from the same paper.</p><p><strong>Examples</strong></p><p>The following is an example of a 2x4 ETF with S4 its symmetry group.</p><pre><code class="language-julia-repl hljs">julia&gt; gram = ExactCons.dx2d_etf_from_prime_power(3);
+
+julia&gt; G = projective_symmetry_group(gram)
+Permutation group of degree 4
+
+julia&gt; transitivity(G, 1:4)
+2
+
+julia&gt; describe(G)
+&quot;A4&quot;</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/jorqueraian/FrameTheory.jl/blob/33f07f498d555cd15cc3925c382f353bf466cbe8/src/ExactFrames/Symmetries.jl#L5-L33">source</a></section></details></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Frame Theory</a><a class="docs-footer-nextpage" href="../NumericalFrames/">Frames Numerically »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.18.0 on <span class="colophon-date" title="Monday 31 August 2026 14:14">Monday 31 August 2026</span>. Using Julia version 1.12.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body><div data-docstringscollapsed="true"></div></html>
